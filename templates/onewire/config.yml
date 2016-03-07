@@ -1,0 +1,8 @@
+name: Onewire Collectors
+description: |
+  (Experimental) Onewire server, workers, and jobber
+version: 0.1
+category: clustering
+maintainer: "Thomas Davis <tadavis@lbl.gov>"
+minimum_rancher_version: v0.56.0
+license: 

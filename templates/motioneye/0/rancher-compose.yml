@@ -1,0 +1,4 @@
+.catalog:
+  name: "MotionEye"
+  description: "0.31-nersc"
+  uuid: motioneye-0

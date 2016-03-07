@@ -1,0 +1,9 @@
+motioneye:
+  image: docker-registry:5000/mini/motioneye
+  ports:
+      - 8765
+  labels:
+    io.rancher.container.hostname_override: container_name
+  volumes:
+    - /etc/motioneye
+    - /var/lib/motioneye

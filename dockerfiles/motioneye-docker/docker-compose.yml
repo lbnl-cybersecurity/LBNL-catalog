@@ -1,0 +1,11 @@
+version: '2'
+services:
+  motioneye:
+    build: .
+    ports:
+      - "8765:8765"
+    container_name: MotionEye
+    volumes:
+      - /glusterfs/gv0/docker/motioneye/config:/etc/motioneye
+      - /glusterfs/gv0/docker/motioneye/lib:/var/lib/motioneye
+    hostname: MotionEye
