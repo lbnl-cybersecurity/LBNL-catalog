@@ -1,5 +1,5 @@
 motioneye:
-  image: docker-registry:5000/mini/motioneye
+  image: docker-registry.crt.nersc.gov:5000/mini/motioneye
   ports:
       - 8765
   labels:
