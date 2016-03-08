@@ -1,0 +1,15 @@
+.catalog:
+  name: Onewire Service
+  version: 0.1
+  description: |
+    Starts a owserver for every onewire gateway, and
+    maintains a consul service check.
+
+jobber:
+  scale: 1
+
+owserver:
+  scale: 1
+
+worker:
+  scale: 1

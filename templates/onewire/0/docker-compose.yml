@@ -1,0 +1,9 @@
+owserver:
+  image: docker-registry.crt.nersc.gov:5000/mini/owfs-server
+  net: host
+
+jobber:
+  image: docker-registry.crt.nersc.gov:5000/mini/owfs-jobber
+
+worker:
+  image: docker-registry.crt.nersc.gov:5000/mini/owfs-jobber
