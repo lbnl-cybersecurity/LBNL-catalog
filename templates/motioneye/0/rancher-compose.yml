@@ -4,8 +4,8 @@
   version: "0.31.3"
   uuid: motioneye-0
   questions:
-    - variable: "NAME"
-      description "MotionEye instance name."
+    - variable: "ME_NAME"
+      description: "MotionEye instance name."
       label: "Name"
       required: true
       default: "MotionEye"

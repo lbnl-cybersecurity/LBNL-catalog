@@ -4,7 +4,7 @@ motioneye:
   ports:
     - 8765
   labels:
-    io.rancher.container.hostname_override: "${NAME}"
+    io.rancher.container.hostname_override: "${ME_NAME}"
   volumes:
     - /etc/motioneye
     - /var/lib/motioneye
