@@ -9,7 +9,7 @@
       description: "Number of workers for collection.."
       label: "Worker Nodes:"
       required: true
-      de fault: 1
+      default: 1
       type: "int"
 
 jobber:
