@@ -1,7 +1,7 @@
 motioneye:
-  image: docker-registry.crt.nersc.gov:5000/mini/motioneye
+  image: docker-registry.crt.nersc.gov:5000/f23/motioneye:0.31.3
   ports:
-      - 8765
+    - 8765
   labels:
     io.rancher.container.hostname_override: container_name
   volumes:

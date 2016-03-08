@@ -1,5 +1,5 @@
 .catalog:
   name: "MotionEye"
   description: "Web interface for motion software."
-  version: "0.31-nersc"
+  version: "0.31.3"
   uuid: motioneye-0
