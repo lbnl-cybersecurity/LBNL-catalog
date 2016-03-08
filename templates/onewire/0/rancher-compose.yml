@@ -4,12 +4,20 @@
   description: |
     Starts a owserver for every onewire gateway, and
     maintains a consul service check.
+  questions:
+    - variable: "worker_scale"
+      description: "Number of workers for collection.."
+      label: "Worker Nodes:"
+      required: true
+      de fault: 1
+      type: "int"
 
 jobber:
   scale: 1
 
 owserver:
   scale: 1
+  io.rancher.scheduler.affinity:host_label: net.onewire=true
 
 worker:
-  scale: 1
+  scale: ${worker_scale}
