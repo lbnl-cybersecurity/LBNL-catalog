@@ -17,7 +17,6 @@ jobber:
 
 owserver:
   scale: 1
-  io.rancher.scheduler.affinity:host_label: net.onewire=true
 
 worker:
   scale: ${worker_scale}
