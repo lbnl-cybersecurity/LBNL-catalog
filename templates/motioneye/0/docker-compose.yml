@@ -6,5 +6,5 @@ motioneye:
   labels:
     io.rancher.container.hostname_override: "${ME_NAME}"
   volumes:
-    - /etc/motioneye
-    - /var/lib/motioneye
+    - motioneye-etc:/etc/motioneye
+    - motioneye:/var/lib/motioneye
