@@ -5,7 +5,7 @@ owserver:
       io.rancher.scheduler.affinity:host_label: net.onewire=true
 
 jobber:
-  image: docker-registry.crt.nersc.gov:5000/mini/owfs-jobber:0.8
+  image: docker-registry.crt.nersc.gov:5000/mini/owfs-jobber:0.9
 
 worker:
-  image: docker-registry.crt.nersc.gov:5000/mini/owfs-worker:0.6
+  image: docker-registry.crt.nersc.gov:5000/mini/owfs-worker:0.7
