@@ -1,4 +1,4 @@
-name: modbus
+name: RabbitMQ
 description: |
     RabbitMQ Cluster
     version: 1.0.0
