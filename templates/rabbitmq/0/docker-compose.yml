@@ -1,0 +1,10 @@
+rabbit:
+  ports:
+    - 15672/tcp
+  hostname: rabbit.rancher.internal
+  environment:
+    RANCHER_SERVICE_NAME: rabbit
+    RABBITMQ_ERLANG_COOKIE: "RABBITCOOKIE"
+  labels:
+    io.rancher.container.dns: true
+  image: dsvmacdonald/rancher-rabbitmq
