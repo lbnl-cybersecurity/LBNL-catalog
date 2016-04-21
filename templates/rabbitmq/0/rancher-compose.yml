@@ -1,5 +1,5 @@
 .catalog:
-  name: Onewire Service
+  name: RabbitMQ Cluster
   version: 0.1
   description: |
     Starts RabbitMQ Cluster
