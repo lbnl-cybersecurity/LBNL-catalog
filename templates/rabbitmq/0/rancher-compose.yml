@@ -1,5 +1,5 @@
 .catalog:
-  name: RabbitMQ Cluster
+  name: RabbitMQ
   version: 0.1
   description: |
     Starts RabbitMQ Cluster
