@@ -1,2 +1,15 @@
+.catalog:
+  name: Onewire Service
+  version: 0.1
+  description: |
+    Starts RabbitMQ Cluster
+  questions:
+    - variable: "rabbit_scale"
+      description: "Number of RabbitMQ instances"
+      label: "RabbitMQ instances:"
+      required: true
+      default: :
+      type: "int"
+
 rabbit:
-  scale: 3
+  scale: ${rabbit_scale}
