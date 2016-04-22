@@ -1,6 +1,6 @@
 .catalog:
   name: RabbitMQ
-  version: 0.1
+  version: "0.1"
   description: |
     Starts RabbitMQ Cluster
   questions:
@@ -8,7 +8,7 @@
       description: "Number of RabbitMQ instances"
       label: "RabbitMQ instances:"
       required: true
-      default: :
+      default: 1
       type: "int"
 
 rabbit:
