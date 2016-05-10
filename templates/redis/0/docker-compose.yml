@@ -1,0 +1,9 @@
+redis:
+    container_name: redis
+    image: centos
+    hostname: redis.rancher
+    environment:
+        RANCHER_SERVICE_NAME: redis
+    labels:
+        io.rancher.container.dns: true
+        io.rancher.scheduler.affinity:host_label: net.dst=true

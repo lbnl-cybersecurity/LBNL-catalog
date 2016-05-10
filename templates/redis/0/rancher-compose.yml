@@ -1,0 +1,15 @@
+.catalog:
+  name: redis
+  version: "0.1"
+  description: |
+    Starts Redis Cluster
+  questions:
+    - variable: "redis_scale"
+      description: "Number of Redis instances"
+      label: "Redis instances:"
+      required: true
+      default: 1
+      type: "int"
+
+rabbit:
+  scale: ${redis_scale}
