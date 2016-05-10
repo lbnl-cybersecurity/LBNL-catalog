@@ -1,0 +1,9 @@
+registry:
+    container_name: docker-registry
+    image: registry:2
+    hostname: docker-registry.rancher
+    environment:
+        RANCHER_SERVICE_NAME: docker-registry
+    labels:
+        io.rancher.container.dns: true
+        io.rancher.scheduler.affinity:host_label: net.dst=true

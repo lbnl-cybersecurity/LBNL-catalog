@@ -1,0 +1,8 @@
+name: Registry
+description: |
+  (Experimental) Docker Registry
+version: 0.1
+category: DockerRegistry
+maintainer: "Joshua Boverhof <jrboverhof@lbl.gov>"
+minimum_rancher_version: v0.56.0
+license:
