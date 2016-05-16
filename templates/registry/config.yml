@@ -1,6 +1,6 @@
-name: Registry
+name: PSIRegistry
 description: |
-  (Experimental) Docker Registry
+  Power Systems Infrastructure Docker Registry
 version: 0.1
 category: DockerRegistry
 maintainer: "Joshua Boverhof <jrboverhof@lbl.gov>"
