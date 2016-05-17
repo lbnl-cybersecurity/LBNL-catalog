@@ -1,8 +1,8 @@
-pdu:
-    scale: 5
-ion:
-    scale: 2
-ups:
-    scale: 2
-master:
+.catalog:
+    name: Docker Registry
+    version: 0.1
+    description: |
+       Docker Registry
+
+registry:
     scale: 1

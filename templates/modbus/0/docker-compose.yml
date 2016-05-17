@@ -1,20 +1,16 @@
-pdu:
-  image: docker-registry.crt.nersc.gov:5000/pulsar_worker_1
-  command: -q modbus
+psi:
+  image: 10.42.141.112:5000/mini/modbus-worker:0.3
+  command: "-q modbus --redis=redis.redis"
   labels:
-    io.rancher.scheduler.affinity:host_label: net.modbus=true
-ion:
-  image: docker-registry.crt.nersc.gov:5000/pulsar_worker_1
-  command: -q ion
-  labels:
-    io.rancher.scheduler.affinity:host_label: net.substation=true
-ups:
-  image: docker-registry.crt.nersc.gov:5000/pulsar_worker_1
-  command: -q ups
-  labels:
-    io.rancher.scheduler.affinity:host_label: net.ups=true
+    io.rancher.container.dns: true
+    io.rancher.scheduler.affinity:host_label: net.dst=true
+    io.rancher.container.network : true
 master:
-  image: docker-registry.crt.nersc.gov:5000/pulsar_worker_1
+  image: 10.42.141.112:5000/mini/modbus-worker:0.3
   container_name: modbus_master
   entrypoint: python
-  command: "./pulsar/scripts/pulsar_job_producer.py"
+  command: "./pulsar/scripts/pulsar_job_producer.py --redis=redis.redis --rabbit=rabbit.rabbitmq"
+  labels:
+    io.rancher.container.dns: true
+    io.rancher.scheduler.affinity:host_label: net.dst=true
+    io.rancher.container.network : true
