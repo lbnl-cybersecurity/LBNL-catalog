@@ -1,8 +1,8 @@
-name: Redis
+name: PSIRedis
 description: |
-  (Experimental) Redis instance
+  (Experimental) PSI Redis instance
 version: 0.1
-category: RabbitMQ
+category: Redis
 maintainer: "Joshua Boverhof <jrboverhof@lbl.gov>"
 minimum_rancher_version: v0.56.0
 license:

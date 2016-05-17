@@ -12,7 +12,8 @@ RUN yum update -y
 RUN yum install -y wget
 RUN wget -r --no-parent -A 'epel-release-*.rpm' http://dl.fedoraproject.org/pub/epel/7/x86_64/e/
 RUN rpm -Uvh dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-*.rpm
-
+RUN yum update -y
+RUN yum install -y redis
 
 # Set the default command to execute
 ENTRYPOINT ["redis-server"]

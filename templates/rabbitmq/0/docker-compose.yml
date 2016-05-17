@@ -12,3 +12,4 @@ rabbit:
     labels:
         io.rancher.container.dns: true
         io.rancher.scheduler.affinity:host_label: net.dst=true
+        io.rancher.container.network : true

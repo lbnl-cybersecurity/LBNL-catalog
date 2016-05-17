@@ -2,7 +2,7 @@
   name: redis
   version: "0.1"
   description: |
-    Starts Redis Cluster
+    Starts PSI Redis Cluster
   questions:
     - variable: "redis_scale"
       description: "Number of Redis instances"
@@ -11,5 +11,5 @@
       default: 1
       type: "int"
 
-rabbit:
+redis:
   scale: ${redis_scale}
