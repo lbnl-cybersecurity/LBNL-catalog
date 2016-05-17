@@ -1,0 +1,15 @@
+.catalog:
+  name: amqp2elastic
+  version: "0.1"
+  description: |
+    Starts PSI AMQP2Elastic Cluster
+  questions:
+    - variable: "amqp2elastic_scale"
+      description: "Number of AMQP2Elastic instances"
+      label: "AMQP2Elastic instances:"
+      required: true
+      default: 1
+      type: "int"
+
+amqp2elastic:
+  scale: ${amqp2elastic_scale}

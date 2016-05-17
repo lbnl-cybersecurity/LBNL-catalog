@@ -1,8 +1,18 @@
-pdu:
-    scale: 5
-ion:
-    scale: 2
-ups:
-    scale: 2
+.catalog:
+    name: PSI Modbus Application
+    version: 0.1
+    description: |
+       Modbus polling
+    questions:
+      - variable: "worker_scale"
+        description: "Number of workers"
+        label: "Worker Nodes"
+        required: true
+        default: 2
+        type: "int"
+
+psi:
+    scale: ${worker_scale}
+
 master:
     scale: 1

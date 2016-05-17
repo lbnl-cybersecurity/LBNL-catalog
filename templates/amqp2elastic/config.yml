@@ -1,0 +1,8 @@
+name: amqp2elastic
+description: |
+  (Experimental) PSI logstash takes from rabbit and push to elasticsearch
+version: 0.1
+category: Logstash
+maintainer: "Joshua Boverhof <jrboverhof@lbl.gov>"
+minimum_rancher_version: v0.56.0
+license:
