@@ -1,0 +1,10 @@
+amqp2elastic:
+    container_name: amqp2elastic
+    image: 10.42.141.112:5000/lbnl/amqp2elastic:0.1
+    hostname: amqp2elastic.rancher
+    environment:
+        RANCHER_SERVICE_NAME: amqp2elastic
+    labels:
+        io.rancher.container.dns: true
+        io.rancher.scheduler.affinity:host_label: net.dst=true
+        io.rancher.container.network : true
