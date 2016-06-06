@@ -1,0 +1,3 @@
+Contains all files Ansible requires for configuration
+
+** Copy SSH KEY to master/ansible_id_rsa before building
