@@ -1,0 +1,23 @@
+psl:
+  image: 10.42.141.112:5000/mini/modbus-worker:0.3
+  command: "-q modbus --redis=redis.redis"
+  labels:
+    io.rancher.container.dns: true
+    io.rancher.container.network : true
+    io.rancher.scheduler.affinity:host_label: net.dst=true
+lawrencium:
+  image: 10.42.141.112:5000/mini/modbus-worker:0.3
+  command: "-q lawrencium --redis=redis.redis"
+  labels:
+    io.rancher.container.dns: true
+    io.rancher.container.network : true
+    io.rancher.scheduler.affinity:host_label: net.lawrencium=true
+master:
+  image: 10.42.141.112:5000/mini/modbus-worker:0.3
+  container_name: modbus_master
+  entrypoint: python
+  command: "./pulsar/scripts/pulsar_job_producer.py --redis=redis.redis --rabbit=rabbit.rabbitmq"
+  labels:
+    io.rancher.container.dns: true
+    io.rancher.container.network : true
+    io.rancher.scheduler.affinity:host_label: net.dst=true
