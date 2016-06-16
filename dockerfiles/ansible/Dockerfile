@@ -7,6 +7,7 @@ MAINTAINER Joshua Boverhof
 
 # Update the sources list
 ADD master /opt/ansible/master/
+ADD nodes /opt/ansible/nodes/
 RUN mkdir /application
 WORKDIR /application
 RUN yum update -y
