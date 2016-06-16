@@ -4,7 +4,7 @@
 
   tasks:
   - name: copy debian backports file
-    copy: src=backports.list dest=/etc/apt/sources.list.d/backports.list
+    copy: src=/opt/ansible/nodes/etc/apt/sources.list.d/backports.list dest=/etc/apt/sources.list.d/backports.list
             owner=root group=root mode=0644
     become: yes
     become_method: sudo
@@ -21,12 +21,12 @@
     become: yes
     become_method: sudo
   - name: copy docker.list file
-    copy: src=nodes/etc/apt/sources.list.d/docker.list dest=/etc/apt/sources.list.d/docker.list
+    copy: src=/opt/ansible/nodes/etc/apt/sources.list.d/docker.list dest=/etc/apt/sources.list.d/docker.list
             owner=root group=root mode=0644
     become: yes
     become_method: sudo
   - name: copy docker default
-    copy: src=nodes/etc/default/docker dest=/etc/default/docker
+    copy: src=/opt/ansible/nodes/etc/default/docker dest=/etc/default/docker
             owner=root group=root mode=0644
     become: yes
     become_method: sudo

@@ -24,3 +24,12 @@ Contains all files Ansible requires for configuration
    63  ansible-playbook lawrencium.yml 
    65  ansible-playbook lawrencium.yml 
    67  ansible-playbook lawrencium.yml 
+
+
+
+[root@1a8e2c94f360 application]# ansible lawrencium-docker.lbl.gov -m service -a "name=docker state=restarted" --become --become-method=sudo 
+lawrencium-docker.lbl.gov | SUCCESS => {
+    "changed": true, 
+    "name": "docker", 
+    "state": "started"
+}
