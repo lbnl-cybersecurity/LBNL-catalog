@@ -1,3 +1,22 @@
+
+=========================================================================
+===== NERSC RabbitMQ Shovel
+=========================================================================
+
+
+urce 	amqp://
+	ha-metric : mendel.pqube-mendel-1.modbus.point.mendel-1-pqube
+exchange
+Destination 	amqps://nersc-shovel:N3R5C2LBNL@rabbit.lbl.gov
+	ha-metric : nersc.mendel.pqube-mendel-1.modbus.point.mendel-1-pqube
+exchange
+Prefetch count 	?
+Reconnect delay 	30s
+Add headers 	○
+Ack mode 	on-confirm
+Auto-delete 	never
+
+
 =========================================================================
 ===== CREATE A CERTIFICATE
 =========================================================================
