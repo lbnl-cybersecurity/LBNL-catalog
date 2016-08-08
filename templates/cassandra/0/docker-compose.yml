@@ -1,6 +1,6 @@
 cassandra:
   container_name: cassandra
-  image: lbnl/cassandra:0.2
+  image: 10.42.141.112:5000/lbnl/cassandra:0.2
   environment:
     RANCHER_ENABLE: 'true'
   labels:
