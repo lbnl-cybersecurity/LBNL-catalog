@@ -11,6 +11,6 @@ cassandra:
   tty: true
   stdin_open: true
   volumes:
-    - /var/lib/cassandra
+    - /data/cassandra
 
 
