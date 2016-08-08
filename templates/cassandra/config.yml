@@ -1,0 +1,9 @@
+name: Cassandra
+description: |
+  (Experimental) Simple Cassandra setup for rancer
+version: 0.1
+category: Cassandra
+maintainer: "Joshua Boverhof <jrboverhof@lbl.gov>"
+minimum_rancher_version: v0.56.0
+license: 
+
