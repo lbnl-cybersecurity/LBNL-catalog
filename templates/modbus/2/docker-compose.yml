@@ -1,0 +1,30 @@
+psl:
+  image: powerdata/modbus-worker:0.13
+  command: "-q modbus --redis=redis.redis"
+  labels:
+    io.rancher.container.dns: true
+    io.rancher.container.network : true
+    io.rancher.scheduler.affinity:host_label: net.dst=true
+lawrencium:
+  image: powerdata/modbus-worker:0.13
+  command: "-q lawrencium --redis=redis.redis"
+  labels:
+    io.rancher.container.dns: true
+    io.rancher.container.network : true
+    io.rancher.scheduler.affinity:host_label: net.lawrencium=true
+master:
+  image: powerdata/modbus-worker:0.13
+  container_name: modbus_master
+  entrypoint: python
+  command: "./pulsar/scripts/pulsar_job_producer.py --redis=redis.redis --rabbit=rabbit.rabbitmq"
+  labels:
+    io.rancher.container.dns: true
+    io.rancher.container.network : true
+    io.rancher.scheduler.affinity:host_label: net.dst=true
+redis:
+    image: powerdata/redis:0.1
+    container_name: redis
+    labels:
+        io.rancher.container.dns: true
+        io.rancher.scheduler.affinity:host_label: net.dst=true
+        io.rancher.container.network : true
