@@ -10,29 +10,45 @@ redis:
         io.rancher.container.hostname_override: container_name
         io.rancher.scheduler.affinity:host_label: net.dst=true
         io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
-    volumes:
-      - /data/containers/mnt/redis/var/lib/redis:/var/lib/redis
+#    volumes:
+#      - /data/containers/mnt/redis/var/lib/redis:/var/lib/redis
 
 psl:
-  image: powerdata/modbus-worker:0.3
-  command: "-q modbus --redis=redis.redis"
+  image: powerdata/modbus-worker:0.13
+  command: "-q modbus --redis=redis --rabbit=rabbit"
   labels:
     io.rancher.container.dns: true
     io.rancher.container.network : true
     io.rancher.scheduler.affinity:host_label: net.dst=true
+  depends_on:
+    - redis
+  links:
+   - redis
 lawrencium:
-  image: powerdata/modbus-worker:0.3
-  command: "-q lawrencium --redis=redis.redis"
+  image: powerdata/modbus-worker:0.13
+  command: "-q lawrencium --redis=redis --rabbit=rabbit"
   labels:
     io.rancher.container.dns: true
     io.rancher.container.network : true
     io.rancher.scheduler.affinity:host_label: net.lawrencium=true
+  depends_on:
+    - redis
+  links:
+   - redis
+  external_links:
+   - rabbit.rabbitmq:rabbit
 master:
-  image: powerdata/modbus-worker:0.3
+  image: powerdata/modbus-worker:0.13
   container_name: modbus_master
   entrypoint: python
-  command: "./pulsar/scripts/pulsar_job_producer.py --redis=redis.redis --rabbit=rabbit.rabbitmq"
+  command: "./pulsar/scripts/pulsar_job_producer.py --redis=redis --rabbit=rabbit"
   labels:
     io.rancher.container.dns: true
     io.rancher.container.network : true
     io.rancher.scheduler.affinity:host_label: net.dst=true
+  depends_on:
+    - redis
+  links:
+   - redis
+  external_links:
+   - rabbit.rabbitmq:rabbit
