@@ -1,4 +1,3 @@
-
 redis:
     image: redis:alpine
     container_name: redis

@@ -1,6 +1,6 @@
 cassandra:
   container_name: cassandra
-  image: 10.42.141.112:5000/lbnl/cassandra:0.2
+  image: cassandra:3.7
   environment:
     RANCHER_ENABLE: 'true'
   labels:
@@ -11,6 +11,4 @@ cassandra:
   tty: true
   stdin_open: true
   volumes:
-    - /data/cassandra
-
-
+    - /data/containers/mnt/cassandra2:/var/lib/cassandra
