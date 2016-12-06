@@ -1,7 +1,6 @@
 redis:
     image: redis:alpine
     container_name: redis
-    hostname: redis.rancher
     environment:
         RANCHER_SERVICE_NAME: redis
     labels:
@@ -10,8 +9,13 @@ redis:
         io.rancher.container.hostname_override: container_name
         io.rancher.scheduler.affinity:host_label: net.dst=true
         io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
-#    volumes:
-#      - /data/containers/mnt/redis/var/lib/redis:/var/lib/redis
+    entrypoint:
+      - /usr/local/bin/docker-entrypoint.sh
+      - redis-server
+      - /var/lib/redis.conf
+    volumes:
+      - /data/containers/mnt/redis/data:/data
+      - /data/containers/mnt/redis/conf:/var/lib
 
 psl:
   image: powerdata/modbus-worker:0.13
