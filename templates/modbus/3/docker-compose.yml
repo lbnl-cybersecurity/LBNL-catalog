@@ -8,6 +8,7 @@ redis:
         io.rancher.container.network : true
         io.rancher.container.hostname_override: container_name
         io.rancher.scheduler.affinity:host_label: net.dst=true
+        io.rancher.scheduler.affinity:host_label: memory.large=true
         io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
     entrypoint:
       - /usr/local/bin/docker-entrypoint.sh

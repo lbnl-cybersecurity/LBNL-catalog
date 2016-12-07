@@ -1,5 +1,5 @@
 .catalog:
-    name: LBNL Modbus Application
+    name: LBNL PowerData Modbus Application
     version: 0.2
     description: |
        Modbus polling
