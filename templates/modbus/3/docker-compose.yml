@@ -20,7 +20,7 @@ redis:
 
 psl:
   image: powerdata/modbus-worker:0.13
-  command: "-q modbus --redis=redis --rabbit=rabbit"
+  command: "-q modbus --redis=redis"
   labels:
     io.rancher.container.dns: true
     io.rancher.container.network : true
@@ -31,7 +31,7 @@ psl:
    - redis
 lawrencium:
   image: powerdata/modbus-worker:0.13
-  command: "-q lawrencium --redis=redis --rabbit=rabbit"
+  command: "-q lawrencium --redis=redis"
   labels:
     io.rancher.container.dns: true
     io.rancher.container.network : true
