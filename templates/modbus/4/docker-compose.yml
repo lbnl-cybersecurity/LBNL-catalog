@@ -46,7 +46,7 @@ master:
   image: powerdata/modbus-worker:0.14
   container_name: modbus_master
   entrypoint: python
-  command: "./pulsar/scripts/pulsar_job_producer.py --redis=redis --rabbit=rabbit"
+  command: "./pulsar/scripts/pulsar_job_producer.py --redis=redis --rabbit=rabbit.rabbitmq"
   labels:
     io.rancher.container.dns: true
     io.rancher.container.network : true
