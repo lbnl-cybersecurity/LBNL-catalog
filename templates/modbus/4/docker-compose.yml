@@ -19,7 +19,7 @@ redis:
       - /data/containers/mnt/redis/conf:/var/lib
 
 psl:
-  image: powerdata/modbus-worker:0.13
+  image: powerdata/modbus-worker:0.14
   command: "-q dst --redis=redis"
   labels:
     io.rancher.container.dns: true
@@ -30,7 +30,7 @@ psl:
   links:
    - redis
 lawrencium:
-  image: powerdata/modbus-worker:0.13
+  image: powerdata/modbus-worker:0.14
   command: "-q lawrencium --redis=redis"
   labels:
     io.rancher.container.dns: true
@@ -43,7 +43,7 @@ lawrencium:
   external_links:
    - rabbit.rabbitmq:rabbit
 master:
-  image: powerdata/modbus-worker:0.13
+  image: powerdata/modbus-worker:0.14
   container_name: modbus_master
   entrypoint: python
   command: "./pulsar/scripts/pulsar_job_producer.py --redis=redis --rabbit=rabbit"
