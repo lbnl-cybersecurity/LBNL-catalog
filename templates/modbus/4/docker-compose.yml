@@ -40,13 +40,13 @@ lawrencium:
     - redis
   links:
    - redis
-  external_links:
-   - rabbit.rabbitmq:rabbit
+  #external_links:
+  # - rabbit.rabbitmq:rabbit
 master:
   image: powerdata/modbus-worker:0.14
   container_name: modbus_master
   entrypoint: python
-  command: "./pulsar/scripts/pulsar_job_producer.py --redis=redis --rabbit=rabbit.rabbitmq"
+  command: "./pulsar/scripts/pulsar_job_producer.py --redis=redis --rabbit=rabbit.lbl.gov"
   labels:
     io.rancher.container.dns: true
     io.rancher.container.network : true
@@ -55,5 +55,5 @@ master:
     - redis
   links:
    - redis
-  external_links:
-   - rabbit.rabbitmq:rabbit
+  #external_links:
+  # - rabbit.rabbitmq:rabbit

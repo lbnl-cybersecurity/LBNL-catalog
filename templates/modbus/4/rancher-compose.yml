@@ -1,6 +1,6 @@
 .catalog:
     name: LBNL Modbus Application
-    version: 0.4
+    version: 0.5
     description: |
        Modbus polling
     questions:
@@ -8,13 +8,13 @@
         description: "Number of workers for PSL"
         label: "PSL Worker Nodes"
         required: true
-        default: 2
+        default: 0
         type: "int"
       - variable: "lawrencium_worker_scale"
         description: "Number of workers for Lawrencium"
         label: "Lawrencium Worker Nodes"
         required: true
-        default: 2
+        default: 1
         type: "int"
       - variable: "master_scale"
         description: "Number of workers for Lawrencium"
