@@ -1,7 +1,7 @@
 name: data
 description: |
   Cassandra Database
-version: 0.1
+version: 0.2
 category: Database
 maintainer: "Joshua Boverhof <jrboverhof@lbl.gov>"
 minimum_rancher_version: v0.56.0
