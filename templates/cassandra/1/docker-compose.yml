@@ -1,0 +1,12 @@
+cassandra:
+    image: cassandra:3.7
+    environment:
+    - CASSANDRA_CLUSTER_NAME=CEDS
+    volumes:
+    - /data/containers/mnt/cassandra2:/var/lib/cassandra
+    tty: true
+    stdin_open: true
+    labels:
+      io.rancher.container.dns: 'true'
+      io.rancher.container.network: 'true'
+      io.rancher.scheduler.affinity:host_label: rocky=true
