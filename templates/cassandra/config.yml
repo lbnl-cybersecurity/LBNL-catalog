@@ -1,8 +1,8 @@
-name: Cassandra
+name: data
 description: |
-  (Experimental) Simple Cassandra setup for rancer
+  Cassandra Database
 version: 0.1
-category: Cassandra
+category: Database
 maintainer: "Joshua Boverhof <jrboverhof@lbl.gov>"
 minimum_rancher_version: v0.56.0
 license: 
