@@ -1,0 +1,15 @@
+.catalog:
+  name: amqp2elastic
+  version: "0.4"
+  description: |
+    AMQP2Elastic configured to pop from rabbit.rabbitmq queues, filter, and output to elasticsearch-2_elasticsearch-client1 creating several indexes.
+  questions:
+    - variable: "amqp2elastic_scale"
+      description: "Number of AMQP2Elastic instances"
+      label: "AMQP2Elastic instances:"
+      required: true
+      default: 1
+      type: "int"
+
+amqp2elastic:
+  scale: ${amqp2elastic_scale}

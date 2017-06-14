@@ -1,7 +1,7 @@
 name: amqp2elastic
 description: |
   LBNL/CRT cyber security infrastructure, pulls from rabbit.rabbitmq and creates indexes via elastic search client.
-version: 0.3
+version: 0.4
 category: Logstash
 maintainer: "Joshua Boverhof <jrboverhof@lbl.gov>"
 minimum_rancher_version: v0.56.0

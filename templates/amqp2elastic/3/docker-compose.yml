@@ -1,0 +1,11 @@
+amqp2elastic:
+    container_name: ls5
+    image: docker.elastic.co/logstash/logstash:5.4.1
+    environment:
+        - xpack.monitoring.enabled=false
+    labels:
+        io.rancher.container.dns: true
+        io.rancher.scheduler.affinity:host_label: net.dst=true
+        io.rancher.container.network : true
+    volumes:
+        - /home/portnoy/u0/boverhof/src/logstash/pipeline/:/usr/share/logstash/pipeline/
