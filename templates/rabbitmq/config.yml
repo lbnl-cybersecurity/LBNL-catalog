@@ -1,9 +1,8 @@
 name: RabbitMQ
 description: |
   (Experimental) RabbitMQ Cluster
-version: 0.1
+version: 0.2
 category: RabbitMQ
 maintainer: "Joshua Boverhof <jrboverhof@lbl.gov>"
 minimum_rancher_version: v0.56.0
-license: 
-
+license:

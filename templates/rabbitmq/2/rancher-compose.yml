@@ -1,0 +1,20 @@
+.catalog:
+  name: RabbitMQ
+  version: "0.3"
+  description: |
+    Starts RabbitMQ Cluster
+  questions:
+    - variable: "cluster_size"
+      description: "Size of RabbitMQ Cluster"
+      label: "RabbitMQ Cluster Size:"
+      required: true
+      default: 1
+      type: "int"
+
+services:
+  rabbitmq:
+    scale: ${cluster_size}
+    metadata:
+      rabbitmq:
+        config:
+         node.name: "$${HOSTNAME}"

@@ -1,0 +1,34 @@
+rabbitmq:
+  labels:
+    io.rancher.sidekicks: rabbitmq-base,rabbitmq-datavolume
+    io.rancher.scheduler.affinity:host_label: net.dst=true
+    io.rancher.container.hostname_override: container_name
+    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+  image: rdaneel/rabbitmq-conf:0.2.0
+  volumes_from:
+  - rabbitmq-datavolume
+rabbitmq-base:
+  environment:
+    RABBITMQ_ERLANG_COOKIE: CYBERPOWERCLUSTER1
+  labels:
+    io.rancher.scheduler.affinity:host_label: net.dst=true
+    io.rancher.container.hostname_override: container_name
+    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+  entrypoint:
+  - /opt/rancher/bin/run.sh
+  image: rabbitmq:3.6-management
+  volumes_from:
+  - rabbitmq-datavolume
+  net: container:rabbitmq
+rabbitmq-datavolume:
+  labels:
+    io.rancher.container.start_once: 'true'
+    io.rancher.scheduler.affinity:host_label: net.dst=true
+    io.rancher.container.hostname_override: container_name
+    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+  entrypoint:
+  - /bin/true
+  image: rabbitmq:3.6-management
+  volumes:
+  - /etc/rabbitmq
+  - /opt/rancher/bin
